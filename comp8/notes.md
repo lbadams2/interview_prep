@@ -1,0 +1,6 @@
+* One step logistic regression and gradient descent https://www.baeldung.com/cs/gradient-descent-logistic-regression and https://medium.com/analytics-vidhya/logistic-regression-with-gradient-descent-explained-machine-learning-a9a12b38d710
+* In one step you need to update the parameters (b_i for features and b_0 for intercept) by plugging in the current values for the features to the closed form solution of the derivative of the loss function, and add that to the old b_i and b_0
+* In log reg the logistic function is used as the model to map input values to output values, the logistic function is the hypothesis function  h(x). In linear regression the hypothesis function is a line $h(x) = b_0 + b_1*x_1 + ... + b_n*x_n$
+    * Need to choose a cost (loss) function to optimize, for log reg $-log(h(x))$ for y=1 and $-log(1 - h(x))$ for y = 0. In linear regression the cost function is MSE (y-y_pred)^2
+    * For this log reg loss function, to find minima need to use SGD. Need to run SGD on each parameter using the partial derivative for that parameter `b_i`
+    * The derivative of the loss function with respect to `b_i` is $(h(x_i) - y_i)x_i$, to update the parameter subtract this from `b_i`. This is for a single step, the total updates can be summarized in a summation

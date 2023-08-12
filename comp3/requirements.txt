@@ -1,0 +1,4 @@
+ipykernel
+pyspark
+pandas
+matplotlib
